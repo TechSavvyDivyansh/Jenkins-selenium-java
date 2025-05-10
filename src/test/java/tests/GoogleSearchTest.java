@@ -2,6 +2,7 @@ package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -13,7 +14,12 @@ public class GoogleSearchTest {
     @BeforeClass
     public void setup() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");  // Headless mode (no GUI)
+        options.addArguments("--disable-gpu"); // Disable GPU (for headless systems)
+        options.addArguments("--no-sandbox"); // Disable sandbox for Linux
+        driver = new ChromeDriver(options);
     }
 
     @Test
