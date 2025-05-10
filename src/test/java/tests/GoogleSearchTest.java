@@ -24,6 +24,7 @@ public class GoogleSearchTest {
 
     @Test
     public void testGoogleHomePageTitle() {
+        System.out.println("entered testttttttttttttttttttttt");
         driver.get("https://www.google.com");
         assert driver.getTitle().contains("Google");
     }
