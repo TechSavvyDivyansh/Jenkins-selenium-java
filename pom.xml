@@ -31,15 +31,14 @@
             <!-- Maven Surefire Plugin to run TestNG -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                    </includes>
-                    <testFailureIgnore>false</testFailureIgnore>
+                    <source>11</source>  <!-- or 8 -->
+                    <target>11</target>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
