@@ -3,6 +3,8 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class GoogleSearchTest {
 
@@ -10,8 +12,7 @@ public class GoogleSearchTest {
 
     @BeforeClass
     public void setup() {
-        // If you're running headless or from Jenkins, enable headless mode.
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
     }
 
